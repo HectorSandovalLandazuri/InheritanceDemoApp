@@ -1,27 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using InheritanceDemo;
+
 Car car =new Car();
 car.NumberOfDoors = 4;
 car.NumberOfWheels = 4;
+Corolla corolla = new Corolla();
+Boat boat=new Boat();
 
-
-
-public class Car
+List<Phone> phones = new List<Phone>();
+phones.Add(new Cellphone());
+phones.Add(new SmartPhone());
+foreach(Phone phone in phones)
 {
-    public int NumberOfWheels { get; set; }
-    public int NumberOfDoors { get; set; }
-
-    public void StartCar()
+    if (phone is Cellphone cell)
     {
-
+        cell.Carrier = "";
     }
-
-    public void StopCar()
+    if (phone is SmartPhone smartphone)
     {
-
+        smartphone.ConnectToInternet();
     }
-}
-
-public class Corolla
-{
 
 }
